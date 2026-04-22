@@ -8,7 +8,7 @@
 <meta property="og:title" content="Prodgy Pet Plans" />
 <meta property="og:description" content="Affordable veterinary care without the credit check. Built in Iowa, for the pet parents and clinics the existing system has been failing for a long time." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="assets/WalkingIntoHospitalCard.png" />
+<meta property="og:image" content="assets/Loonuhh-Front.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
@@ -20,13 +20,16 @@
     --accent: #3f7aa7;
     --accent-soft: #7aa5c5;
     --border: #d5dfeb;
+    --border-warm: #e4dfd2;
     --bg: #fdfeff;
-    --bg-warm: #faf8f3;
+    --bg-warm: #f7f2e8;      /* slightly warmer to match Loonuhh art's paper tone */
+    --bg-warm-2: #efe8d9;
     --bg-soft: #f4f7fb;
     --body: #4b5563;
     --body-soft: #6b7280;
     --shadow: rgba(20, 62, 99, 0.18);
     --shadow-soft: rgba(20, 62, 99, 0.08);
+    --shadow-warm: rgba(79, 60, 35, 0.10);
   }
 
   * { box-sizing: border-box; }
@@ -42,16 +45,15 @@
   a { color: var(--mid); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  /* Top bar */
+  /* ---- TOP BAR ---- */
   .topbar {
     padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg-warm);
+    border-bottom: 1px solid var(--border-warm);
     position: sticky;
     top: 0;
     z-index: 10;
     backdrop-filter: blur(8px);
-    background: rgba(250, 248, 243, 0.92);
+    background: rgba(247, 242, 232, 0.92);
   }
   .topbar-inner {
     max-width: 1100px;
@@ -88,9 +90,9 @@
     letter-spacing: 0.02em;
   }
 
-  /* Hero */
+  /* ---- HERO ---- */
   .hero {
-    padding: 5rem 1.5rem 4rem;
+    padding: 5rem 1.5rem 3.5rem;
     position: relative;
     overflow: hidden;
   }
@@ -99,15 +101,15 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 20% 0%, rgba(63, 122, 167, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 100%, rgba(26, 77, 120, 0.06) 0%, transparent 50%);
+      radial-gradient(ellipse at 15% 0%, rgba(63, 122, 167, 0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 100%, rgba(26, 77, 120, 0.05) 0%, transparent 50%);
     pointer-events: none;
   }
   .hero-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 3rem;
     align-items: center;
     position: relative;
@@ -116,7 +118,7 @@
     display: inline-block;
     padding: 0.4rem 0.95rem;
     background: #fff;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-warm);
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 600;
@@ -152,19 +154,19 @@
   }
   .hero-image img {
     width: 100%;
-    max-width: 360px;
+    max-width: 420px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 12px 24px rgba(20, 62, 99, 0.12));
+    filter: drop-shadow(0 18px 28px var(--shadow-warm));
   }
 
-  /* Email capture */
+  /* ---- EMAIL CAPTURE ---- */
   .capture {
     background: #fff;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-warm);
     border-radius: 14px;
     padding: 1.5rem;
-    box-shadow: 0 8px 24px var(--shadow-soft);
+    box-shadow: 0 8px 24px var(--shadow-warm);
     max-width: 500px;
   }
   .capture-label {
@@ -218,21 +220,18 @@
     margin: 0.9rem 0 0;
   }
 
-  /* Sections */
+  /* ---- SECTIONS ---- */
   section.block {
     padding: 5rem 1.5rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-warm);
     position: relative;
   }
-  section.block.white { background: #fff; }
-  section.block.warm { background: var(--bg-warm); }
-  section.block.dark {
-    background: var(--ink-deep);
-    color: #e8eef5;
+  section.block.white {
+    background: #fff;
+    border-top-color: var(--border);
   }
-  section.block.dark h2 { color: #fff; }
-  section.block.dark .section-eyebrow { color: var(--accent-soft); }
-  section.block.dark .section-body { color: #c3d0de; }
+  section.block.warm { background: var(--bg-warm); }
+  section.block.warm-2 { background: var(--bg-warm-2); }
 
   .block-inner {
     max-width: 1100px;
@@ -242,6 +241,7 @@
   .block-narrow {
     max-width: 780px;
     margin: 0 auto;
+    position: relative;
   }
 
   .section-eyebrow {
@@ -268,7 +268,7 @@
   }
   .section-body strong { color: var(--ink); font-weight: 600; }
 
-  /* Thesis band — the confident statement */
+  /* ---- THESIS BAND ---- */
   .thesis-band {
     padding: 6rem 1.5rem;
     background: var(--ink-deep);
@@ -307,7 +307,7 @@
     letter-spacing: 0.02em;
   }
 
-  /* Three failure modes */
+  /* ---- THREE FAILURE MODES ---- */
   .failure-stack {
     display: grid;
     gap: 2.5rem;
@@ -342,25 +342,31 @@
   }
   .failure-body strong { color: var(--ink); font-weight: 600; }
 
-  /* Split image/text */
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+  /* ---- POUNCE LOONUHH (end of failures section) ---- */
+  /* Loonuhh in play-bow pose at the end of the section, eyeing the punctuation */
+  .pounce-container {
+    position: relative;
+    margin-top: 1rem;
+    padding-bottom: 3rem;
   }
-  .split.reverse .split-text { order: 2; }
-  .split.reverse .split-image { order: 1; }
-  .split-image img {
-    width: 100%;
+  .pounce-final-line {
+    font-size: 1.1rem;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.6;
+    padding-right: 220px;
+    margin: 2rem 0 0;
+  }
+  .pounce-img {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    width: 240px;
     height: auto;
-    display: block;
+    pointer-events: none;
   }
 
-  /* The promise section — one big claim, well-articulated */
-  .promise {
-    max-width: 720px;
-  }
+  /* ---- PROMISE / ALTERNATIVE SECTION ---- */
   .promise-headline {
     font-size: clamp(1.8rem, 3.6vw, 2.5rem);
     font-weight: 800;
@@ -377,58 +383,63 @@
   }
   .promise-body strong { color: var(--ink); font-weight: 600; }
   .promise-em {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--ink);
     font-weight: 600;
     border-left: 3px solid var(--accent);
     padding-left: 1.25rem;
     margin: 2rem 0;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
-  /* Loonuhh decorative placements */
-  .loonuhh-peek {
+  /* ---- WHERE WE ARE — PEEK LOONUHH ---- */
+  /* Loonuhh peeks around the right edge of this section */
+  .where-we-are {
+    position: relative;
+    overflow: hidden;
+  }
+  .peek-img {
     position: absolute;
+    right: -5px;
     bottom: 0;
-    right: 3%;
-    width: 140px;
+    width: 180px;
     height: auto;
-    opacity: 0.95;
     pointer-events: none;
+    z-index: 2;
+  }
+  .where-we-are .block-narrow {
+    padding-right: 2rem;
   }
 
-  /* Meet Loonuhh / founder section */
+  /* ---- MEET LOONUHH / FOUNDER ---- */
   .founder-block {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: 3rem;
     align-items: start;
     max-width: 880px;
     margin: 0 auto;
   }
   .founder-image {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.25rem;
-    box-shadow: 0 6px 18px var(--shadow-soft);
     text-align: center;
   }
   .founder-image img {
     width: 100%;
-    max-width: 220px;
+    max-width: 280px;
     height: auto;
+    filter: drop-shadow(0 12px 20px var(--shadow-warm));
   }
   .founder-image-caption {
     font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--ink);
-    margin: 0.5rem 0 0;
+    margin: 1rem 0 0;
+    line-height: 1;
   }
   .founder-image-sub {
     font-size: 0.82rem;
     color: var(--body-soft);
-    margin: 0.25rem 0 0;
+    margin: 0.4rem 0 0;
     font-style: italic;
   }
   .founder-eyebrow {
@@ -460,7 +471,7 @@
     margin: 1.25rem 0 0;
   }
 
-  /* Final CTA */
+  /* ---- FINAL CTA ---- */
   .final-cta {
     padding: 5.5rem 1.5rem;
     background: var(--ink);
@@ -494,10 +505,10 @@
   .final-cta .capture-input::placeholder { color: rgba(255, 255, 255, 0.5); }
   .final-cta .capture-fineprint { color: rgba(255, 255, 255, 0.6); }
 
-  /* Footer */
+  /* ---- FOOTER ---- */
   footer {
     padding: 3rem 1.5rem 2.5rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-warm);
     background: var(--bg-warm);
     color: var(--body-soft);
     font-size: 0.85rem;
@@ -531,23 +542,22 @@
   /* Success state */
   .capture-success {
     background: #fff;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-warm);
     border-radius: 12px;
     padding: 1.5rem;
     color: var(--ink);
   }
   .capture-success strong { display: block; margin-bottom: 0.5rem; }
 
+  /* ---- MOBILE ---- */
   @media (max-width: 800px) {
-    .hero { padding: 3rem 1.25rem 3rem; }
-    .hero-inner,
-    .split,
-    .split.reverse {
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero-inner {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
     }
-    .split.reverse .split-text { order: 1; }
-    .split.reverse .split-image { order: 2; }
+    .hero-image { order: -1; }
+    .hero-image img { max-width: 280px; }
     section.block { padding: 3.5rem 1.25rem; }
     .thesis-band { padding: 4rem 1.25rem; }
     .final-cta { padding: 4rem 1.25rem; }
@@ -559,18 +569,32 @@
       gap: 0.5rem;
     }
     .failure-num { font-size: 2.5rem; }
+    .pounce-final-line { padding-right: 0; }
+    .pounce-img {
+      position: static;
+      display: block;
+      margin: 2rem auto 0;
+      width: 200px;
+    }
+    .peek-img {
+      width: 120px;
+      right: -10px;
+      opacity: 0.9;
+    }
+    .where-we-are .block-narrow {
+      padding-right: 110px;
+    }
     .founder-block {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
     .founder-image { max-width: 280px; margin: 0 auto; }
-    .loonuhh-peek { width: 90px; right: 5%; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- ================= TOP BAR ================= -->
 <header class="topbar">
   <div class="topbar-inner">
     <div class="wordmark">
@@ -581,7 +605,7 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-inner">
     <div>
@@ -614,13 +638,12 @@
       </form>
     </div>
     <div class="hero-image">
-      <!-- Loonuhh, centered, looking at the viewer -->
-      <img src="assets/loonuhh-front.png" alt="Loonuhh, a puppy with enormous eyes, sitting and looking at the viewer." />
+      <img src="assets/Loonuhh-Front.png" alt="Loonuhh, a smiling pit bull mix, sitting and looking at the viewer." />
     </div>
   </div>
 </section>
 
-<!-- THESIS BAND — the confident, quotable core claim -->
+<!-- ================= THESIS BAND ================= -->
 <section class="thesis-band">
   <p class="thesis-text">
     Every pet parent deserves a path to the care their animal needs.
@@ -630,7 +653,7 @@
   <p class="thesis-signature">— that's what we're building.</p>
 </section>
 
-<!-- THE PROBLEM, AS THREE FAILURE MODES -->
+<!-- ================= PROBLEM / THREE FAILURES ================= -->
 <section class="block warm">
   <div class="block-inner block-narrow">
     <p class="section-eyebrow">The problem</p>
@@ -672,40 +695,41 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- THE ALTERNATIVE — the promise section, one claim well-articulated -->
-<section class="block white">
-  <div class="block-inner">
-    <div class="split">
-      <div class="split-text">
-        <p class="section-eyebrow">The alternative</p>
-        <h2 class="promise-headline">
-          Your vet is the point. We're the infrastructure underneath.
-        </h2>
-        <p class="promise-body">
-          Every pet insurance company wants to sit between you and your veterinarian. Every pet-tech app wants to pull your attention into their portal, their brand, their relationship. We don't. <strong>Your clinic keeps its name, its brand, and its relationship with you.</strong>
-        </p>
-        <p class="promise-body">
-          What Prodgy Pet Plans provides is the financial and operational infrastructure that lets your vet offer something better than a credit card application in a crisis — an affordable, predictable care plan with financing that's extended based on how you show up at the clinic, not what a credit bureau has on file.
-        </p>
-        <p class="promise-em">
-          Missed a credit card payment three years ago? Doesn't matter here. Paid your last six visits on time and brought your dog in for her wellness checks? That's what we care about. That's what we use.
-        </p>
-        <p class="promise-body">
-          No insurance premiums. No credit checks. No third-party lender getting in the way of the relationship between you and the people who take care of your animal.
-        </p>
-      </div>
-      <div class="split-image">
-        <img src="assets/AnimalHospitalCard.png" alt="A neighborhood animal hospital, a pet parent walking their dog toward the entrance." />
-      </div>
+    <!-- Loonuhh in play-bow pose, eyeing the period at the end of this line -->
+    <div class="pounce-container">
+      <p class="pounce-final-line">
+        Which is to say: the status quo is not inevitable. It's the result of decisions that were made, and decisions that can be un-made.
+      </p>
+      <img class="pounce-img" src="assets/Loonuhh-Pounce.png" alt="Loonuhh crouched in a play-bow, eyeing a period at the end of a sentence." />
     </div>
   </div>
 </section>
 
-<!-- WHERE WE ARE -->
-<section class="block warm">
+<!-- ================= ALTERNATIVE / PROMISE ================= -->
+<section class="block white">
+  <div class="block-inner block-narrow">
+    <p class="section-eyebrow">The alternative</p>
+    <h2 class="promise-headline">
+      Your vet is the point. We're the infrastructure underneath.
+    </h2>
+    <p class="promise-body">
+      Every pet insurance company wants to sit between you and your veterinarian. Every pet-tech app wants to pull your attention into their portal, their brand, their relationship. We don't. <strong>Your clinic keeps its name, its brand, and its relationship with you.</strong>
+    </p>
+    <p class="promise-body">
+      What Prodgy Pet Plans provides is the financial and operational infrastructure that lets your vet offer something better than a credit card application in a crisis — an affordable, predictable care plan with financing that's extended based on how you show up at the clinic, not what a credit bureau has on file.
+    </p>
+    <p class="promise-em">
+      Missed a credit card payment three years ago? Doesn't matter here. Paid your last six visits on time and brought your dog in for her wellness checks? That's what we care about. That's what we use.
+    </p>
+    <p class="promise-body">
+      No insurance premiums. No credit checks. No third-party lender getting in the way of the relationship between you and the people who take care of your animal.
+    </p>
+  </div>
+</section>
+
+<!-- ================= WHERE WE ARE — with PEEK Loonuhh ================= -->
+<section class="block warm-2 where-we-are">
   <div class="block-inner block-narrow">
     <p class="section-eyebrow">Where we are</p>
     <h2 class="section-title">In development, in Iowa, with practices who have been asking for this for a long time.</h2>
@@ -717,17 +741,16 @@
     </p>
   </div>
 
-  <!-- LOONUHH HOOK: tug-of-war with a dash — drop a matching pose in here when generated -->
-  <!-- Suggested filename: assets/loonuhh-tug.png. Uncomment img tag below to activate. -->
-  <!-- <img class="loonuhh-peek" src="assets/loonuhh-tug.png" alt="Loonuhh playing tug-of-war with a dash." /> -->
+  <!-- Loonuhh peeking around the right edge of the section -->
+  <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh peeking around the edge of the section." />
 </section>
 
-<!-- MEET LOONUHH / FOUNDER -->
+<!-- ================= MEET LOONUHH / FOUNDER ================= -->
 <section class="block white">
   <div class="block-inner">
     <div class="founder-block">
       <div class="founder-image">
-        <img src="assets/loonuhh-front.png" alt="Loonuhh, the founder's dog." />
+        <img src="assets/Loonuhh-Front.png" alt="Loonuhh, the founder's dog." />
         <p class="founder-image-caption">Loonuhh</p>
         <p class="founder-image-sub">(she gets too excited to finish her name)</p>
       </div>
@@ -749,7 +772,7 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- ================= FINAL CTA ================= -->
 <section class="final-cta">
   <h2>Get in early.</h2>
   <p>
@@ -776,7 +799,7 @@
   </form>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -794,7 +817,6 @@
 </footer>
 
 <script>
-  // Simple client-side handling. Swap the REPLACE block for whatever backend you wire up.
   function wireForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -805,14 +827,7 @@
         alert('Please enter a valid email address.');
         return;
       }
-      // === REPLACE THIS BLOCK ===
-      // Example:
-      //   await fetch('/api/subscribe', {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify({ email, source: formId })
-      //   });
-      // ==========================
+      // === REPLACE THIS BLOCK with your real endpoint ===
       console.log('Subscribed:', email, 'from', formId);
 
       const success = document.createElement('div');
