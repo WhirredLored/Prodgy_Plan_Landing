@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prodgy Pet Plans — Affordable veterinary care without the credit check</title>
+  <title>Prodgy Pet Plans — A stranger to the math</title>
   <meta name="description"
-    content="The distance between your pet's care and your ability to pay for it is not a moral failing. It's a system problem. We're fixing it." />
+    content="When something's wrong with your pet, you shouldn't be a stranger to the math. Prodgy is being built for Iowa veterinary clinics and the families who use them." />
   <meta property="og:title" content="Prodgy Pet Plans" />
   <meta property="og:description"
-    content="Affordable veterinary care without the credit check. Built in Iowa, for the pet parents and clinics the existing system has been failing for a long time." />
+    content="When something's wrong with your pet, you shouldn't be a stranger to the math. Prodgy is being built for Iowa veterinary clinics and the families who use them." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/loonuhh-front.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
     rel="stylesheet" />
 
   <style>
@@ -27,23 +27,19 @@
       --accent: #3f7aa7;
       --accent-soft: #7aa5c5;
       --accent-warm: #c98c4a;
-      /* gentle amber for the "ball" period */
       --border: #d5dfeb;
       --border-warm: #e4dfd2;
       --bg: #fdfeff;
-      --bg-warm: #f7f2e8;
-      --bg-warm-2: #efe8d9;
+      --bg-warm: #fdfaf4;
+      --bg-warm-2: #f5f0e6;
       --bg-soft: #f4f7fb;
       --body: #4b5563;
       --body-soft: #6b7280;
       --shadow: rgba(20, 62, 99, 0.18);
       --shadow-soft: rgba(20, 62, 99, 0.08);
       --shadow-warm: rgba(79, 60, 35, 0.10);
-
-      /* Loonuhh shadow chain — defines silhouette against cream backgrounds.
-         Tight 1px outline, soft halo, longer grounding shadow. */
-      --loonuhh-shadow:
-        drop-shadow(0 0 1px rgba(20, 62, 99, 0.35)) drop-shadow(0 0 4px rgba(20, 62, 99, 0.10)) drop-shadow(0 14px 22px rgba(79, 60, 35, 0.18));
+      
+      --loonuhh-shadow: drop-shadow(0 0 1px rgba(20, 62, 99, 0.35)) drop-shadow(0 0 4px rgba(20, 62, 99, 0.10)) drop-shadow(0 14px 22px rgba(79, 60, 35, 0.18));
     }
 
     * {
@@ -61,6 +57,7 @@
       background: var(--bg-warm);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a {
@@ -75,16 +72,16 @@
     /* ---- TOP BAR ---- */
     .topbar {
       padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--border-warm);
       position: sticky;
       top: 0;
       z-index: 10;
+      background: rgba(253, 250, 244, 0.95);
       backdrop-filter: blur(8px);
-      background: rgba(247, 242, 232, 0.92);
+      border-bottom: 1px solid var(--border-warm);
     }
 
     .topbar-inner {
-      max-width: 1100px;
+      max-width: 800px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -96,117 +93,42 @@
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .wordmark-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: linear-gradient(180deg, var(--accent) 0%, var(--mid) 100%);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-    }
-
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .topbar-link {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--mid);
-    }
-
-    .topbar-link:hover {
-      color: var(--ink);
-      text-decoration: none;
+      letter-spacing: -0.01em;
     }
 
     .topbar-meta {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
+      font-weight: 500;
       color: var(--body-soft);
       letter-spacing: 0.02em;
     }
 
     /* ---- HERO ---- */
     .hero {
-      padding: 5rem 1.5rem 3.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 15% 0%, rgba(63, 122, 167, 0.06) 0%, transparent 55%),
-        radial-gradient(ellipse at 90% 100%, rgba(26, 77, 120, 0.05) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
+      padding: 5rem 1.5rem 0rem;
+      max-width: 800px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-eyebrow {
-      display: inline-block;
-      padding: 0.4rem 0.95rem;
-      background: #fff;
-      border: 1px solid var(--border-warm);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--mid);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1.75rem;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: clamp(2.1rem, 4.8vw, 3.5rem);
-      line-height: 1.08;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1;
       font-weight: 800;
       color: var(--ink-deep);
-      margin: 0 0 1.75rem;
+      margin: 0 0 1.5rem;
       letter-spacing: -0.025em;
-    }
-
-    .hero h1 .emphasis {
-      display: block;
-      color: var(--accent);
     }
 
     .hero-lede {
       font-size: 1.15rem;
       color: var(--body);
-      margin: 0 0 2.25rem;
-      max-width: 520px;
+      max-width: 600px;
+      margin: 0 auto 3rem;
       line-height: 1.6;
     }
 
-    .hero-lede strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* Hero image: halo behind to detach her from the cream bg */
+    /* Hero Image */
     .hero-image {
       display: flex;
       justify-content: center;
@@ -231,33 +153,218 @@
       position: relative;
     }
 
-    /* ---- EMAIL CAPTURE ---- */
+    /* ---- ESSAY ARTICLE ---- */
+    .essay-article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      color: var(--ink);
+      position: relative;
+    }
+
+    .essay-article p {
+      margin-bottom: 1.75rem;
+    }
+
+    /* ---- POUNCE LOONUHH ---- */
+    .pounce-anchor {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .pounce-target {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.6em;
+      line-height: 0;
+      color: var(--accent-warm);
+      font-weight: 800;
+      transform: translateY(-0.05em);
+      margin-left: 0.1em;
+      animation: pounceBall 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pounceBall {
+      0%, 70%, 100% { transform: translateY(-0.05em) scale(1); }
+      80% { transform: translateY(-0.05em) scale(1.18); }
+      90% { transform: translateY(-0.05em) scale(1); }
+    }
+
+    .pounce-img-wrap {
+      position: absolute;
+      width: 140px;
+      left: calc(100% + 15px);
+      bottom: 25px;
+      filter: var(--loonuhh-shadow);
+      animation: pounceIdle 4s ease-in-out infinite;
+    }
+
+    .pounce-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: scaleX(-1);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes pounceIdle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* ---- PITCH SECTION ---- */
+    .pitch-section {
+      background: #fff;
+      padding: 5rem 1.5rem;
+      border-top: 1px solid var(--border-warm);
+      border-bottom: 1px solid var(--border-warm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pitch-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .pitch-inner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--ink-deep);
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pitch-inner p {
+      font-size: 1.1rem;
+      color: var(--body);
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pitch-inner strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ---- PEEK LOONUHH ---- */
+    .peek-img-wrap {
+      position: absolute;
+      left: -320px;
+      top: -2rem;
+      width: 320px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .peek-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: var(--loonuhh-shadow);
+    }
+
+    .peek-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -10% -10% -10% -10%;
+      background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.45) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @media (max-width: 1200px) {
+      .peek-img-wrap {
+        left: -200px;
+        opacity: 0.3;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .peek-img-wrap {
+        display: none;
+      }
+      .pounce-img-wrap {
+        display: none; /* Hide pounce dog if screen is too small to avoid horizontal scroll */
+      }
+      .pounce-target {
+        animation: none; /* Turn off ball bounce on mobile if dog isn't there */
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        transform: none;
+        margin-left: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pounce-target, .pounce-img-wrap { animation: none; }
+    }
+
+    /* ---- CTA SECTION ---- */
+    .cta-section {
+      padding: 5rem 1.5rem;
+      background: var(--bg-warm-2);
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--ink-deep);
+      margin: 0 0 1rem;
+      letter-spacing: -0.015em;
+    }
+
+    .cta-inner p.cta-lede {
+      font-size: 1.05rem;
+      color: var(--body);
+      margin: 0 auto 2.5rem;
+      max-width: 550px;
+    }
+
     .capture {
       background: #fff;
       border: 1px solid var(--border-warm);
       border-radius: 14px;
-      padding: 1.5rem;
+      padding: 2rem;
       box-shadow: 0 8px 24px var(--shadow-warm);
-      max-width: 500px;
-    }
-
-    .capture-label {
-      display: block;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.9rem;
+      max-width: 550px;
+      margin: 0 auto 3rem;
+      text-align: left;
     }
 
     .capture-form {
       display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 500px) {
+      .capture-form {
+        flex-direction: row;
+      }
     }
 
     .capture-input {
       flex: 1;
-      min-width: 200px;
       padding: 0.9rem 1rem;
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -285,6 +392,7 @@
       cursor: pointer;
       box-shadow: 0 6px 14px var(--shadow);
       transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
     }
 
     .capture-button:hover {
@@ -293,501 +401,64 @@
     }
 
     .capture-fineprint {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--body-soft);
-      margin: 0.9rem 0 0;
-    }
-
-    /* ---- SECTIONS ---- */
-    section.block {
-      padding: 5rem 1.5rem;
-      border-top: 1px solid var(--border-warm);
-      position: relative;
-    }
-
-    section.block.white {
-      background: #fff;
-      border-top-color: var(--border);
-    }
-
-    section.block.warm {
-      background: var(--bg-warm);
-    }
-
-    section.block.warm-2 {
-      background: var(--bg-warm-2);
-    }
-
-    .block-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .block-narrow {
-      max-width: 780px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .section-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 0 0 0.9rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.7rem, 3.4vw, 2.4rem);
-      font-weight: 800;
-      color: var(--ink-deep);
-      margin: 0 0 1.5rem;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-    }
-
-    .section-body {
-      font-size: 1.05rem;
-      color: var(--body);
-      margin: 0 0 1.25rem;
-      line-height: 1.7;
-    }
-
-    .section-body strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* ---- THESIS BAND ---- */
-    .thesis-band {
-      padding: 6rem 1.5rem;
-      background: var(--ink-deep);
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .thesis-band::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(63, 122, 167, 0.25) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(63, 122, 167, 0.15) 0%, transparent 50%);
-    }
-
-    .thesis-text {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.015em;
-    }
-
-    .thesis-text .accent {
-      color: var(--accent-soft);
-      font-weight: 800;
-    }
-
-    .thesis-signature {
-      position: relative;
-      margin-top: 2rem;
-      font-family: 'Caveat', cursive;
-      font-size: 1.4rem;
-      color: var(--accent-soft);
-      letter-spacing: 0.02em;
-    }
-
-    /* ---- THREE FAILURE MODES ---- */
-    .failure-stack {
-      display: grid;
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .failure {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1.75rem;
-      align-items: start;
-    }
-
-    .failure-num {
-      font-family: 'Caveat', cursive;
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 0.85;
-      min-width: 60px;
-    }
-
-    .failure-heading {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--ink-deep);
-      margin: 0 0 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .failure-body {
-      font-size: 1.05rem;
-      color: var(--body);
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    .failure-body strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* ---- POUNCE LOONUHH ----
-       Loonuhh in play-bow at the END of the failures section.
-       FLIPPED via scaleX(-1) on the inner image so her face points LEFT
-       toward a literal period in the prose — the period is her "ball".
-       Drop-shadows live on the OUTER wrapper so they remain in screen coords
-       and don't flip with her. A radial halo behind the wrapper breaks up
-       the cream-on-cream blend. */
-    .pounce-row {
-      position: relative;
-      z-index: 1; /* Stacking context */
-      margin: 2.5rem 0 0;
-      display: block;
-      /* removed padding-bottom, dog sits in the right padding instead! */
-    }
-
-    .pounce-final-line {
-      font-size: 1.15rem;
-      color: var(--ink);
-      font-weight: 500;
-      line-height: 1.65;
-      margin: 0;
-      padding-right: 140px; /* Leave exactly enough room for the dog */
-      text-align-last: right; /* Force the period to sit right next to the empty space */
-    }
-
-    .pounce-anchor {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .pounce-target {
-      display: inline-block;
-      font-size: 1.6em;
-      line-height: 0;
-      color: var(--accent-warm);
-      font-weight: 800;
-      transform: translateY(-0.05em);
-      margin-left: 0.2em;
-      animation: pounceBall 2.4s ease-in-out infinite;
-    }
-
-    @keyframes pounceBall {
-
-      0%,
-      70%,
-      100% {
-        transform: translateY(-0.05em) scale(1);
-      }
-
-      80% {
-        transform: translateY(-0.05em) scale(1.18);
-      }
-
-      90% {
-        transform: translateY(-0.05em) scale(1);
-      }
-    }
-
-    .pounce-img-wrap {
-      position: absolute;
-      width: 140px;
-      left: calc(100% + 10px); /* Exactly a couple spaces from the paw */
-      bottom: 35px; /* Raised approximately two lines as requested */
-      filter: var(--loonuhh-shadow);
-      animation: pounceIdle 4s ease-in-out infinite;
-    }
-
-    .pounce-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transform: scaleX(-1);
-      /* face LEFT toward the period */
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes pounceIdle {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-3px);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .pounce-target,
-      .pounce-img-wrap {
-        animation: none;
-      }
-    }
-
-    /* ---- PROMISE / ALTERNATIVE SECTION ---- */
-    .promise-headline {
-      font-size: clamp(1.8rem, 3.6vw, 2.5rem);
-      font-weight: 800;
-      color: var(--ink-deep);
-      letter-spacing: -0.02em;
-      margin: 0 0 1.5rem;
-      line-height: 1.15;
-    }
-
-    .promise-body {
-      font-size: 1.1rem;
-      color: var(--body);
-      line-height: 1.7;
-      margin: 0 0 1.25rem;
-    }
-
-    .promise-body strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .promise-em {
-      font-size: 1.2rem;
-      color: var(--ink);
-      font-weight: 600;
-      border-left: 3px solid var(--accent);
-      padding-left: 1.25rem;
-      margin: 2rem 0;
-      line-height: 1.55;
-    }
-
-    /* ---- WHERE WE ARE — PEEK LOONUHH ----
-       Loonuhh peeks out from BEHIND a pull-quote card (NOT the page edge).
-       The card has its own white background and shadow so it occludes most
-       of her body, with her head emerging beyond the card's bottom-right
-       corner. Card sits on warm-2 section bg, so the contrast reads. */
-    /* ---- PEEK LOONUHH IN MARGIN ---- */
-    .peek-img-wrap {
-      position: absolute;
-      left: -260px; /* Sit in the negative margin to the left of the block-narrow */
-      top: 2rem;    /* Align roughly with the top of the text */
-      width: 300px;
-      z-index: 0;
-      pointer-events: none; /* Ensure it doesn't block text selection */
-    }
-
-    .peek-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: var(--loonuhh-shadow);
-    }
-
-    .peek-img-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -10% -10% -10% -10%;
-      background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.45) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    @media (max-width: 1100px) {
-      .peek-img-wrap {
-        display: none; /* Hide on smaller screens where there is no left margin */
-      }
-    }
-
-    .peek-quote {
-      position: relative;
-      background: #fff;
-      border: 1px solid var(--border-warm);
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      padding: 1.5rem 1.75rem 1.5rem 1.5rem;
-      margin: 2.5rem 0 0 0;
-      box-shadow: 0 10px 22px var(--shadow-warm);
-      font-size: 1.1rem;
-      color: var(--ink);
-      font-weight: 500;
-      line-height: 1.5;
-      font-style: italic;
-    }
-
-    .peek-quote-attr {
-      display: block;
-      margin-top: 0.6rem;
-      font-style: normal;
-      font-family: 'Caveat', cursive;
-      font-size: 1.15rem;
-      color: var(--body-soft);
-    }
-
-    /* ---- MEET LOONUHH / FOUNDER ---- */
-    .founder-block {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 3rem;
-      align-items: start;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-
-    .founder-image {
+      margin: 1rem 0 0;
       text-align: center;
     }
 
-    .founder-image img {
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-      border-radius: 14px;
-      object-fit: cover;
-      box-shadow: 0 10px 30px var(--shadow-warm);
-    }
-
-    .founder-image-caption {
+    .founder-signoff {
       font-family: 'Caveat', cursive;
       font-size: 1.8rem;
       color: var(--ink);
-      margin: 1rem 0 0;
-      line-height: 1;
+      line-height: 1.2;
     }
 
-    .founder-image-sub {
-      font-size: 0.82rem;
+    .founder-signoff span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
       color: var(--body-soft);
-      margin: 0.4rem 0 0;
+      margin-top: 0.2rem;
       font-style: italic;
-    }
-
-    .founder-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 0 0 0.9rem;
-    }
-
-    .founder-heading {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--ink-deep);
-      margin: 0 0 1.25rem;
-      letter-spacing: -0.015em;
-    }
-
-    .founder-body {
-      font-size: 1rem;
-      color: var(--body);
-      line-height: 1.7;
-      margin: 0 0 1rem;
-    }
-
-    .founder-body strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .founder-sig {
-      font-family: 'Caveat', cursive;
-      font-size: 1.5rem;
-      color: var(--ink);
-      margin: 1.25rem 0 0;
-    }
-
-    /* ---- FINAL CTA ---- */
-    .final-cta {
-      padding: 5.5rem 1.5rem;
-      background: var(--ink);
-      color: #fff;
-      text-align: center;
-    }
-
-    .final-cta h2 {
-      font-size: clamp(1.85rem, 4vw, 2.6rem);
-      margin: 0 0 1.1rem;
-      letter-spacing: -0.02em;
-      font-weight: 800;
-    }
-
-    .final-cta p {
-      color: #c3d0de;
-      font-size: 1.08rem;
-      max-width: 560px;
-      margin: 0 auto 2.25rem;
-      line-height: 1.65;
-    }
-
-    .final-cta .capture {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.15);
-      margin: 0 auto;
-    }
-
-    .final-cta .capture-label {
-      color: #fff;
-    }
-
-    .final-cta .capture-input {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
-
-    .final-cta .capture-input::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .final-cta .capture-fineprint {
-      color: rgba(255, 255, 255, 0.6);
     }
 
     /* ---- FOOTER ---- */
     footer {
-      padding: 3rem 1.5rem 2.5rem;
-      border-top: 1px solid var(--border-warm);
-      background: var(--bg-warm);
-      color: var(--body-soft);
+      padding: 4rem 1.5rem 3rem;
+      background: var(--ink-deep);
+      color: rgba(255, 255, 255, 0.6);
       font-size: 0.85rem;
     }
 
     .footer-inner {
-      max-width: 1100px;
+      max-width: 800px;
       margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .footer-brand {
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+      flex-direction: column;
+      gap: 2rem;
     }
 
     .footer-disclosure {
-      max-width: 540px;
       line-height: 1.6;
+    }
+
+    .footer-disclosure strong {
+      display: block;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-links {
@@ -797,116 +468,40 @@
     }
 
     .footer-links a {
-      color: var(--body);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-links a:hover {
+      color: #fff;
     }
 
     /* Success state */
     .capture-success {
-      background: #fff;
-      border: 1px solid var(--border-warm);
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.5rem;
       color: var(--ink);
+      text-align: center;
     }
 
     .capture-success strong {
       display: block;
       margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
-    /* ---- MOBILE ---- */
-    @media (max-width: 800px) {
+    @media (max-width: 600px) {
       .hero {
-        padding: 3rem 1.25rem 2.5rem;
+        padding: 3.5rem 1.25rem 0rem;
       }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      .essay-article {
+        padding: 2rem 1.25rem 3rem;
       }
 
-      .hero-image {
-        order: -1;
-      }
-
-      .hero-image img {
-        max-width: 280px;
-      }
-
-      section.block {
+      .pitch-section, .cta-section {
         padding: 3.5rem 1.25rem;
-      }
-
-      .thesis-band {
-        padding: 4rem 1.25rem;
-      }
-
-      .final-cta {
-        padding: 4rem 1.25rem;
-      }
-
-      .capture-form {
-        flex-direction: column;
-      }
-
-      .capture-input,
-      .capture-button {
-        width: 100%;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
-
-      .topbar-right {
-        gap: 0.9rem;
-      }
-
-      .topbar-link {
-        font-size: 0.8rem;
-      }
-
-      .failure {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-      }
-
-      .failure-num {
-        font-size: 2.5rem;
-      }
-
-      /* Pounce on mobile */
-      .pounce-row {
-        padding-bottom: 60px;
-      }
-
-      .pounce-final-line {
-        padding-bottom: 0.5rem;
-      }
-
-      .pounce-img-wrap {
-        width: 120px;
-      }
-
-      /* Peek on mobile: tighten card + shrink image */
-      .peek-img-wrap {
-        width: 110px;
-        left: -40px;
-        bottom: -14px;
-      }
-
-      .peek-quote {
-        padding: 1.25rem 1.4rem;
-      }
-
-      .founder-block {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .founder-image {
-        max-width: 280px;
-        margin: 0 auto;
       }
     }
   </style>
@@ -914,264 +509,125 @@
 
 <body>
 
-  <!-- ================= TOP BAR ================= -->
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="wordmark">
-        <span class="wordmark-mark">PP</span>
-        <span>Prodgy Pet Plans</span>
-      </div>
+      <div class="wordmark">Prodgy Pet Plans</div>
       <div class="topbar-right">
-        <a class="topbar-link" href="practices/">For veterinary practices →</a>
-        <span class="topbar-meta">Iowa · Early access</span>
+        <span class="topbar-meta">Iowa · Coming 2026</span>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <span class="hero-eyebrow">Coming to Iowa · 2026</span>
-        <h1>
-          Affordable veterinary care,
-          <span class="emphasis">without the credit check.</span>
-        </h1>
-        <p class="hero-lede">
-          The distance between your pet's care and your ability to pay for it is not a moral failing. It's <strong>a
-            system problem</strong>. We're fixing it.
-        </p>
-
-        <form class="capture" id="primary-capture" action="#" method="POST" novalidate>
-          <label for="email-primary" class="capture-label">Join the early access list</label>
-          <div class="capture-form">
-            <input id="email-primary" type="email" name="email" class="capture-input" placeholder="[email protected]"
-              required autocomplete="email" />
-            <button type="submit" class="capture-button">Keep me posted</button>
-          </div>
-          <p class="capture-fineprint">One email a month, maybe less. No spam. Unsubscribe anytime.</p>
-        </form>
-      </div>
-
-      <div class="hero-image">
-        <img src="assets/loonuhh-front.png" alt="Loonuhh, a smiling pit bull mix, sitting and looking at the viewer." />
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= THESIS BAND ================= -->
-  <section class="thesis-band">
-    <p class="thesis-text">
-      Every pet parent deserves a path to the care their animal needs.
-      <br />
-      <span class="accent">Not a credit application. Not an insurance policy. A path.</span>
+    <h1>When something's wrong with your pet, you shouldn't be a stranger to the math.</h1>
+    <p class="hero-lede">
+      Prodgy is being built for Iowa veterinary clinics and the families who use them. Opening in 2026.
     </p>
-    <p class="thesis-signature">— that's what we're building.</p>
-  </section>
-
-  <!-- ================= PROBLEM / THREE FAILURES ================= -->
-  <section class="block warm">
-    <div class="block-inner block-narrow">
-      <p class="section-eyebrow">The problem</p>
-      <h2 class="section-title">The current system is failing three people at once.</h2>
-
-      <p class="section-body">
-        When a pet gets sick and a family can't afford care, there's a story most of the industry wants to tell about
-        personal responsibility and planning ahead. That story is incomplete. The financing infrastructure around
-        veterinary care is broken, and it's breaking down in three different places at the same time.
-      </p>
-
-      <div class="failure-stack">
-        <div class="failure">
-          <span class="failure-num">1</span>
-          <div>
-            <h3 class="failure-heading">The pet parent gets a bill they can't plan for and options designed against
-              them.</h3>
-            <p class="failure-body">
-              <strong>Pet insurance</strong> works on the same math as any insurance product: most of the time, most
-              customers pay more in premiums than they ever receive in claims. When claims do happen, exclusions and
-              reimbursement structures often leave families paying thousands out of pocket anyway. <strong>Medical
-                credit cards</strong> — the default option when insurance isn't in place — are deferred-interest
-              products that can charge six months of retroactive interest at rates approaching 27% if the balance isn't
-              paid in full within a promotional window that's easy to miss at signing. Neither product is built for the
-              pet parent. Both are built around the pet parent.
-            </p>
-          </div>
-        </div>
-
-        <div class="failure">
-          <span class="failure-num">2</span>
-          <div>
-            <h3 class="failure-heading">The independent clinic absorbs risk it wasn't built to carry.</h3>
-            <p class="failure-body">
-              Small veterinary practices operate on thin cash reserves and unpredictable case mix. When a family can't
-              pay, the clinic's only real options are to turn the animal away, extend informal credit that often doesn't
-              get repaid, or push clients toward third-party financing products the clinic quietly resents. Emergency
-              care in particular is hard to justify staying open for when the math stops working — and it stops working
-              a lot more often than the industry talks about openly.
-            </p>
-          </div>
-        </div>
-
-        <div class="failure">
-          <span class="failure-num">3</span>
-          <div>
-            <h3 class="failure-heading">The animal gets caught in the middle.</h3>
-            <p class="failure-body">
-              When financing fails, care doesn't get delayed; it gets declined. A pet that would have received treatment
-              under almost any other circumstance goes home without it — or doesn't go home at all. That outcome isn't
-              the fault of the family that loves the animal, and it isn't the fault of the vet who wants to help. It's
-              the fault of infrastructure that was never designed for the situation it finds itself handling.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!--
-        Loonuhh in play-bow, eyeing a literal period in the prose as her "ball".
-        Image is FLIPPED so she faces LEFT toward the highlighted period.
-      -->
-      <div class="pounce-row">
-        <p class="pounce-final-line">
-          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be
-          <span class="pounce-anchor">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
-            <span class="pounce-img-wrap">
-              <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
-                alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
-            </span>
-          </span>
-        </p>
-      </div>
+    <div class="hero-image">
+      <img src="assets/loonuhh-front.png" alt="Loonuhh, a smiling pit bull mix, sitting and looking at the viewer." />
     </div>
   </section>
 
-  <!-- ================= ALTERNATIVE / PROMISE ================= -->
-  <section class="block white">
-    <div class="block-inner block-narrow">
-      <p class="section-eyebrow">The alternative</p>
-      <h2 class="promise-headline">Your vet is the point. We're the infrastructure underneath.</h2>
+  <article class="essay-article">
+    <p>She follows me into the kitchen because she always follows me into the kitchen, but slower this morning, like she's thinking about it on the way. That's the thing I keep coming back to. Not the bowl, although the bowl is mostly full. Not the step she missed coming off the couch, although she missed it. The thinking about it. She has never had to think about following me into the kitchen.</p>
+    
+    <p>It's been eleven years of not thinking about it. Eleven years of the same forty-foot path between the bedroom and the back door. The same nose pushed under the same arm at the same time of night. A body that knew what it was doing before the brain caught up. She is the only one in this house who has been here longer than the dishwasher.</p>
+    
+    <p>So I notice. Of course I notice. You don't live with someone that long and not notice.</p>
+    
+    <p>I tell myself it's nothing for a little while, the way you do. Maybe she got into something in the yard. Maybe it's the weather changing. Maybe she's just tired in the way any of us are tired some mornings, where the whole day already feels like a long hallway you don't want to walk down. I run through the inventory the way I always run through the inventory — when did she eat, when did she go out, did she drink, did she —</p>
+    
+    <p>Then I stop running through the inventory because I realize I'm running through the inventory, and the only reason I run through the inventory is when something is already wrong.</p>
+    
+    <p>Okay. Phone. Keys. Leash she barely needs anymore because she stays close on her own. The drive to the clinic is the drive I could do with my eyes closed because I have done it for puppy shots and the broken nail and the time she ate a sock and the time she didn't eat a sock but I thought she ate a sock. I keep glancing at her in the rearview. She's just — sitting there. Not panting. Not whining. Looking out the window the way she always does, except quieter, and that's somehow worse than if she were crying.</p>
+    
+    <p>In the waiting room I do the thing where I make my voice sound normal so she doesn't get nervous. Good girl. We're just here for a check. Good girl. Her tail thumps once on the linoleum. That's the part that gets me — the trust. She has no idea. She thinks we're here together because we're always here together, and that has always been enough information.</p>
+    
+    <p>They take her back. They are kind. They are kind in the specific way that people are kind when they're not yet ready to tell you what they think.</p>
+    
+    <p>Then the bloodwork comes back, and it isn't nothing.</p>
+    
+    <p>The vet walks me through it slowly. She is not selling me anything. I can tell the difference. She is laying it out the way you'd lay out a map for someone who has to walk a long way today and shouldn't be lied to about the distance. There is a real thing happening inside her. It is treatable. The treatment is not small. There is a procedure, and a stay, and what comes after the stay, and what comes after what comes after. Each piece is necessary. None of it is theatrical. None of it is padding. It is just — what it costs to make her okay.</p>
+    
+    <p>She sets the estimate down on the counter.</p>
+    
+    <p>I look at the number, and the room does the thing where it reorganizes around it.</p>
+    
+    <p>I start doing the math. Not the polite math. The real one. The one where rent is a maybe and the car payment is a definitely-not and the electric goes on the pile and the late fees are a tax I'm willing to pay and the credit score is a problem for a future version of me who will be grateful to have a problem at all. I am willing to torch the month. I have already, in the span of about ninety seconds, decided to torch the month and call it a fair trade. I would make the call to my sister I do not want to make. I would sell the thing in the closet I told myself I would never sell. I am not the kind of person who was going to sit here this morning and weigh a credit score against eleven years of her, and I want that on the record, even if the only person taking the record is me.</p>
+    
+    <p>The problem is the math still doesn't reach.</p>
+    
+    <p>That's the part I wasn't ready for. I had braced for uncomfortable. I had braced for humiliating. I had not braced for not enough. Even with the month on fire. Even with the card maxed and the checking drained and every awkward phone call made. Even with all of it. The number on the paper is a different size than the number I can assemble out of my life, and the difference between those two numbers is not going to close just because I want it to close very, very badly.</p>
+    
+    <p>The vet sees my face. She has seen this face before. She doesn't flinch and she doesn't pity me, both of which I am grateful for in a way I cannot say out loud. She starts talking about staging — what has to happen today, what can wait, what the cheapest road to an actual answer looks like. She is doing every single thing a person can do from her side of the counter. She is trying to build me a smaller version of the door. She is on my side. She has been on my side this whole morning.</p>
+    
+    <p>But the smaller door has a number on it too. And the number on the smaller door is also more than I have today. Not by a lot. By enough.</p>
+    
+    <p>That's the part nobody warns you about. Not the sickness. Not the bill. The geometry of the room. The way two people who want exactly the same thing — me, and her, and both of us looking at the same animal on the same table — can be standing five feet apart with a wall of arithmetic between them, and neither of us put the wall there, and neither of us knows how to take it down standing where we're standing.</p>
+    
+    <p>They bring her out. They've made her comfortable. The tail does the remembering thing — not a wag, more like a recognition, like the whole morning was just a strange detour and now we're back to the part where we know each other. She leans into my leg the way she always leans into my leg. I crouch down. I put my forehead on the top of her head, which is the place my forehead has been a thousand times, and I tell her we're working on it. I tell her we are going to figure this out.</p>
+    
+    <p>We walk to the car. She takes the curb slow. I match her pace.</p>
+    
+    <p>In the car I sit there for a minute before I start it. She's in the passenger seat now. She's looking at me the way she looks at me when I've been quiet too long.</p>
+    
+    <p>I keep thinking about the counter. About the moment the paper went down. About how, in that moment, I was a stranger to the math even though I wasn't a stranger to anyone in that building. They've known her since she was small enough to fit in one hand. They've known me almost as long. The vet tech at the front knows what kind of treats she takes and which arm she likes the blood pressure cuff on. None of that mattered when the number landed, because known and known for money are two different things, and the second one is the only one the counter cared about.</p>
+    
+    <p>That's the part I can't get past. Not that the bill was big. Bills are big. That's not new. It's that there was no between — no version of me they had on file as someone who shows up, pays what he said he'd pay, month after quiet month, so that today, when the unquiet month finally came, there was already a thread to pull on. A history. A we know him. A reason for the conversation at the counter to start somewhere other than zero.</p>
+    
+    <p>If somebody had told me a year ago — bring her in for her wellness, and pay for it across twelve months instead of one afternoon, in-house, with the same clinic you already drive to — I would have said yes without thinking. Not because the wellness exam is the thing that saves her. The wellness exam might be completely uneventful. Most of them are. That's the point. You come in, nothing's wrong, you pay your small monthly thing, you come in again next year, nothing's wrong, you pay your small monthly thing. And the whole time, without anyone making a big deal of it, you're becoming someone the clinic knows how to carry when the day comes that you need to be carried.</p>
+    
+    <p>I don't know if anyone's built that yet. Here. With our clinic. But if they did — if there was a way to start being known like that, starting with a wellness visit small enough to say yes to every month, so that the next time something goes wrong I'm not a stranger to the math — I would start tonight. I would start in this parking <span class="pounce-anchor">lot<span class="pounce-target">.</span><span class="pounce-img-wrap"><img src="assets/Loonuhh-Pounce-Cropped.png" class="pounce-img" alt="Loonuhh crouching in a play-bow to pounce on the period at the end of the sentence."/></span></span></p>
+  </article>
 
-      <p class="promise-body">
-        Every pet insurance company wants to sit between you and your veterinarian. Every pet-tech app wants to pull
-        your attention into their portal, their brand, their relationship. We don't. <strong>Your clinic keeps its name,
-          its brand, and its relationship with you.</strong>
-      </p>
-
-      <p class="promise-body">
-        What Prodgy Pet Plans provides is the financial and operational infrastructure that lets your vet offer
-        something better than a credit card application in a crisis — an affordable, predictable care plan with
-        financing that's extended based on how you show up at the clinic, not what a credit bureau has on file.
-      </p>
-
-      <p class="promise-em">
-        Missed a credit card payment three years ago? Doesn't matter here. Paid your last six visits on time and brought
-        your dog in for her wellness checks? That's what we care about. That's what we use.
-      </p>
-
-      <p class="promise-body">
-        No insurance premiums. No credit checks. No third-party lender getting in the way of the relationship between
-        you and the people who take care of your animal.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= WHERE WE ARE — with PEEK Loonuhh ================= -->
-  <section class="block warm-2" style="position: relative; overflow: hidden;">
-    <div class="block-inner block-narrow" style="position: relative;">
-      
-      <!-- Loonuhh placed absolutely beside the text block in the left margin -->
+  <section class="pitch-section">
+    <div class="pitch-inner">
       <div class="peek-img-wrap">
-        <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh peeking toward the quote block." />
+        <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh peeking out from behind the text." />
       </div>
-
-      <p class="section-eyebrow">Where we are</p>
-      <h2 class="section-title">In development, in Iowa, with practices that have been asking for this for a long time.</h2>
-
-      <p class="section-body">
-        Prodgy Pet Plans is being built now. Our first partners are independent Iowa veterinary practices, and our first
-        participants will be Iowa pet parents. If the idea resonates and you'd like to stay close to the work, the best
-        way to do that is to join the early access list. No commitments, no payment information, no pressure.
-      </p>
-
-      <p class="section-body">
-        When we launch in your part of the state, we'll let you know — and founding members will have access to terms we
-        won't offer again.
-      </p>
-
-      <blockquote class="peek-quote">
-        Iowa first. Independent practices first. Pet parents who deserved a different option a long time ago.
-        <span class="peek-quote-attr">— what we're building, in one breath</span>
-      </blockquote>
+      <h2>Prodgy is how your clinic gets to know you before the hard day.</h2>
+      <p>Start with a wellness plan you pay into across twelve months, in-house with your veterinarian. Show up. Pay on time. That's it. You're building a history with the people who already know your animal — so that when something unexpected happens, the conversation at the counter starts somewhere other than zero.</p>
+      <p>Not insurance. Not a loan. Not a credit card. Just a way to be known by your clinic, in the way that matters when it matters.</p>
+      <p>Built with Iowa veterinarians, for the families who use them. Opening in 2026.</p>
     </div>
   </section>
 
-  <!-- ================= MEET LOONUHH / FOUNDER ================= -->
-  <section class="block white">
-    <div class="block-inner">
-      <div class="founder-block">
-        <div class="founder-image">
-          <img src="assets/Loonuhh_Real_Life.jpg" alt="Loonuhh, the founder's dog, in real life." />
-          <p class="founder-image-caption">Loonuhh</p>
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Hear from us when we open near you.</h2>
+      <p class="cta-lede">Founding-member terms are the best terms we'll ever offer. Leave your email and we'll let you know the moment your clinic comes online.</p>
+      
+      <form class="capture" id="cta-capture" action="#" method="POST" novalidate>
+        <div class="capture-form">
+          <input id="email-final" type="email" name="email" class="capture-input" placeholder="[email protected]" required autocomplete="email" />
+          <button type="submit" class="capture-button">Tell me when it's near me</button>
         </div>
-        <div>
-          <p class="founder-eyebrow">About the founder</p>
-          <h2 class="founder-heading">Why I'm building this.</h2>
-          <p class="founder-body">
-            Late last year, my dog Loonuhh got very sick, very fast. The emergency hospital I drove her to turned us
-            away because I couldn't pay the deposit up front. A second clinic I found that afternoon didn't. Her surgery
-            happened that night. She came home the next morning.
-          </p>
-          <p class="founder-body">
-            That experience could have been the end of the story — one family, one dog, one close call. What made it the
-            beginning of a company instead was learning that the pattern I'd just lived through wasn't unusual. It's
-            what happens, quietly, to families and clinics across the country every week.
-          </p>
-          <p class="founder-body">
-            I'm not a veterinarian. I'm not a financial services executive. I'm a solo founder with a background in
-            construction, a pretty good understanding of systems, and the conviction that the financial infrastructure
-            around veterinary care has needed serious work for a long time. Prodgy Pet Plans is what I've been building
-            about it.
-          </p>
-          <p class="founder-sig">— Jared</p>
-        </div>
-      </div>
+        <p class="capture-fineprint">One email a month, usually less. No spam. Unsubscribe anytime.</p>
+      </form>
+
+      <p class="founder-signoff">
+        — Jared
+        <span>Iowa</span>
+      </p>
     </div>
   </section>
 
-  <!-- ================= FINAL CTA ================= -->
-  <section class="final-cta">
-    <h2>Get in early.</h2>
-    <p>
-      When Prodgy Pet Plans launches in your part of Iowa, you'll hear about it first — and you'll have access to
-      founding-member terms we won't offer again.
-    </p>
-    <form class="capture" id="final-capture" action="#" method="POST" novalidate>
-      <label for="email-final" class="capture-label">Early access list</label>
-      <div class="capture-form">
-        <input id="email-final" type="email" name="email" class="capture-input" placeholder="[email protected]" required
-          autocomplete="email" />
-        <button type="submit" class="capture-button">Keep me posted</button>
-      </div>
-      <p class="capture-fineprint">One email a month, maybe less. No spam. Unsubscribe anytime.</p>
-    </form>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
   <footer>
     <div class="footer-inner">
-      <div>
-        <div class="footer-brand">Prodgy Pet Plans</div>
-        <p class="footer-disclosure">
-          Prodgy Pet Plans is a care participation program, not insurance and not a lending product. Specific terms,
-          availability, and pricing will be disclosed at enrollment. Iowa-first launch. Nothing on this page constitutes
-          an offer of a financial product.
-        </p>
+      <div class="footer-disclosure">
+        <strong>A note on what this is, and isn't.</strong>
+        Prodgy Pet Plans is a care participation program offered through participating veterinary clinics. It is not pet insurance. It is not a loan. It is not a credit product, and it does not extend credit. Specific plan terms, monthly amounts, what's included in your wellness visit, and what your standing unlocks at your clinic are all set by your clinic and disclosed to you before you enroll — never after. Nothing on this page is an offer of a financial product or a guarantee of coverage for any specific veterinary service. Iowa-first launch; availability depends on your clinic joining the program.
       </div>
-      <div class="footer-links">
-        <a href="practices/">For practices</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="TikTok">TikTok</a>
-        <a href="mailto:[email protected]">Contact</a>
+      
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <span>Questions, or you're a veterinarian who wants to know more about offering Prodgy at your practice? <a href="mailto:contact@prodgyplan.com">contact@prodgyplan.com</a></span>
+        </div>
+        <div class="footer-links">
+          <span>&copy; Prodgy Pet Plans</span>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -1187,16 +643,14 @@
           alert('Please enter a valid email address.');
           return;
         }
-        // === REPLACE THIS BLOCK with your real endpoint ===
         console.log('Subscribed:', email, 'from', formId);
         const success = document.createElement('div');
         success.className = 'capture-success';
-        success.innerHTML = '<strong>You\'re on the list.</strong>We\'ll be in touch when we launch in your area. Watch your inbox for the first update.';
+        success.innerHTML = '<strong>You\'re on the list.</strong>We\'ll be in touch when we launch in your area.';
         form.replaceWith(success);
       });
     }
-    wireForm('primary-capture');
-    wireForm('final-capture');
+    wireForm('cta-capture');
   </script>
 </body>
 
