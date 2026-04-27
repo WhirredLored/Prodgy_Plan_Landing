@@ -456,7 +456,8 @@
     .pounce-row {
       position: relative;
       margin: 2.5rem 0 0;
-      text-align: left;
+      display: block;
+      padding-bottom: 80px; /* Room for the absolute image */
     }
 
     .pounce-final-line {
@@ -467,6 +468,12 @@
       margin: 0;
     }
 
+    .pounce-anchor {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
     .pounce-target {
       display: inline-block;
       font-size: 1.6em;
@@ -474,7 +481,7 @@
       color: var(--accent-warm);
       font-weight: 800;
       transform: translateY(-0.05em);
-      margin-left: 0.1em;
+      margin-left: 0.2em;
       animation: pounceBall 2.4s ease-in-out infinite;
     }
 
@@ -496,11 +503,10 @@
     }
 
     .pounce-img-wrap {
-      display: inline-block;
-      width: 160px; /* slightly smaller to fit well inline */
-      vertical-align: baseline;
-      margin-left: 0.5rem;
-      margin-bottom: -15px; /* pulls her slightly down so her nose touches the baseline */
+      position: absolute;
+      width: 180px;
+      left: calc(100% + 5px);
+      bottom: -15px; /* aligns nose/feet with the baseline */
       filter: var(--loonuhh-shadow);
       animation: pounceIdle 4s ease-in-out infinite;
     }
@@ -868,8 +874,9 @@
         font-size: 2.5rem;
       }
 
+      /* Pounce on mobile */
       .pounce-row {
-        margin: 2rem 0 0;
+        padding-bottom: 60px;
       }
 
       .pounce-final-line {
@@ -878,7 +885,6 @@
 
       .pounce-img-wrap {
         width: 140px;
-        margin-left: 0.2rem;
       }
 
       /* Peek on mobile: tighten card + shrink image */
@@ -1027,7 +1033,12 @@
       <div class="pounce-row">
         <p class="pounce-final-line">
           Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be
-          <span style="white-space: nowrap;">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span><span class="pounce-img-wrap"><img class="pounce-img" src="assets/Loonuhh-Pounce.png" alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." /></span></span>
+          <span class="pounce-anchor">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
+            <span class="pounce-img-wrap">
+              <img class="pounce-img" src="assets/Loonuhh-Pounce.png"
+                alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
+            </span>
+          </span>
         </p>
       </div>
     </div>
