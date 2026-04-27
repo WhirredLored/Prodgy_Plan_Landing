@@ -455,6 +455,7 @@
        the cream-on-cream blend. */
     .pounce-row {
       position: relative;
+      z-index: 1; /* Creates a stacking context so the dog can be placed behind text without disappearing */
       margin: 2.5rem 0 0;
       display: block;
       padding-bottom: 60px; /* Room for absolute image */
@@ -466,6 +467,7 @@
       font-weight: 500;
       line-height: 1.65;
       margin: 0;
+      text-shadow: 0 0 4px var(--cream), 0 0 6px var(--cream), 0 0 8px var(--cream); /* Creates a solid outline over the dog's tail */
     }
 
     .pounce-anchor {
@@ -509,6 +511,7 @@
       bottom: -25px; /* Aligns eye/snout perfectly with the period */
       filter: var(--loonuhh-shadow);
       animation: pounceIdle 4s ease-in-out infinite;
+      z-index: -1; /* Place the dog safely behind the text */
     }
 
     .pounce-img {
@@ -1032,10 +1035,7 @@
       -->
       <div class="pounce-row">
         <p class="pounce-final-line">
-          Which is to say: the status quo is not inevitable. These were decisions someone made — 
-        </p>
-        <p class="pounce-final-line" style="margin-top: 2.5rem;">
-          and decisions can be
+          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be
           <span class="pounce-anchor">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
             <span class="pounce-img-wrap">
               <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
