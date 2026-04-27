@@ -454,11 +454,11 @@
        and don't flip with her. A radial halo behind the wrapper breaks up
        the cream-on-cream blend. */
     .pounce-row {
-      position: relative;
-      z-index: 1; /* Creates a stacking context so the dog can be placed behind text without disappearing */
+      display: flex;
+      align-items: flex-end; /* align to bottom */
+      flex-wrap: wrap; /* allow wrapping on tiny screens */
+      gap: 1.5rem;
       margin: 2.5rem 0 0;
-      display: block;
-      padding-bottom: 60px; /* Room for absolute image */
     }
 
     .pounce-final-line {
@@ -467,19 +467,9 @@
       font-weight: 500;
       line-height: 1.65;
       margin: 0;
-      text-shadow: 0 0 4px var(--cream), 0 0 6px var(--cream), 0 0 8px var(--cream); /* Creates a solid outline over the dog's tail */
+      flex: 1; /* Take up available space */
+      min-width: 250px; /* Force wrap if screen gets too narrow */
     }
-
-    .pounce-anchor {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .pounce-target {
-      display: inline-block;
-      font-size: 1.6em;
-      line-height: 0;
       color: var(--accent-warm);
       font-weight: 800;
       transform: translateY(-0.05em);
@@ -505,13 +495,12 @@
     }
 
     .pounce-img-wrap {
-      position: absolute;
+      position: relative;
+      flex: 0 0 140px;
       width: 140px;
-      left: calc(100% + 10px); /* Exactly a couple spaces from the paw */
-      bottom: -25px; /* Aligns eye/snout perfectly with the period */
+      margin-bottom: -15px; /* Fine-tune snout height relative to text baseline */
       filter: var(--loonuhh-shadow);
       animation: pounceIdle 4s ease-in-out infinite;
-      z-index: -1; /* Place the dog safely behind the text */
     }
 
     .pounce-img {
@@ -582,14 +571,17 @@
        of her body, with her head emerging beyond the card's bottom-right
        corner. Card sits on warm-2 section bg, so the contrast reads. */
     .peek-wrap {
-      position: relative;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; /* allow wrapping on mobile */
+      gap: 1.5rem;
       margin: 2.75rem 0 0.5rem;
-      isolation: isolate;
     }
 
     .peek-quote {
       position: relative;
-      z-index: 2;
+      flex: 1; /* Take up available space */
+      min-width: 250px;
       background: #fff;
       border: 1px solid var(--border-warm);
       border-left: 4px solid var(--accent);
@@ -615,14 +607,10 @@
     }
 
     .peek-img-wrap {
-      position: absolute;
-      left: -80px;
-      bottom: -18px;
+      position: relative;
+      flex: 0 0 150px;
       width: 150px;
-      z-index: 3;
-      /* IN FRONT of the quote (which is z-index 2) */
       filter: var(--loonuhh-shadow);
-      pointer-events: none;
     }
 
     .peek-img-wrap::before {
@@ -638,6 +626,7 @@
       height: auto;
       display: block;
       position: relative;
+      transform: scaleX(-1); /* Face the quote */
     }
 
     /* ---- MEET LOONUHH / FOUNDER ---- */
@@ -1035,14 +1024,12 @@
       -->
       <div class="pounce-row">
         <p class="pounce-final-line">
-          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be
-          <span class="pounce-anchor">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
-            <span class="pounce-img-wrap">
-              <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
-                alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
-            </span>
-          </span>
+          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be un&#8209;made.
         </p>
+        <div class="pounce-img-wrap">
+          <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
+            alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
+        </div>
       </div>
     </div>
   </section>
@@ -1102,13 +1089,13 @@
         bottom-right corner. z-index: card 2, image 1.
       -->
       <div class="peek-wrap">
+        <div class="peek-img-wrap">
+          <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh peeking toward the quote block." />
+        </div>
         <blockquote class="peek-quote">
           Iowa first. Independent practices first. Pet parents who deserved a different option a long time ago.
           <span class="peek-quote-attr">— what we're building, in one breath</span>
         </blockquote>
-        <div class="peek-img-wrap">
-          <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh peeking out from behind a quote card." />
-        </div>
       </div>
     </div>
   </section>
