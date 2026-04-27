@@ -478,8 +478,8 @@
       line-height: 0;
       color: var(--accent-warm);
       font-weight: 800;
-      transform: translateY(0.18em);
-      margin-left: 0.04em;
+      transform: translateY(-0.05em);
+      margin-left: 0.2em;
       animation: pounceBall 2.4s ease-in-out infinite;
     }
 
@@ -488,15 +488,15 @@
       0%,
       70%,
       100% {
-        transform: translateY(0.18em) scale(1);
+        transform: translateY(-0.05em) scale(1);
       }
 
       80% {
-        transform: translateY(0.18em) scale(1.18);
+        transform: translateY(-0.05em) scale(1.18);
       }
 
       90% {
-        transform: translateY(0.18em) scale(1);
+        transform: translateY(-0.05em) scale(1);
       }
     }
 
@@ -619,7 +619,7 @@
 
     .peek-img-wrap {
       position: absolute;
-      right: 0;
+      left: -30px;
       bottom: -18px;
       width: 150px;
       z-index: 1;
@@ -641,6 +641,7 @@
       height: auto;
       display: block;
       position: relative;
+      transform: scaleX(-1);
     }
 
     /* ---- MEET LOONUHH / FOUNDER ---- */
@@ -899,7 +900,7 @@
       /* Peek on mobile: tighten card + shrink image */
       .peek-img-wrap {
         width: 110px;
-        right: -8px;
+        left: -8px;
         bottom: -14px;
       }
 
@@ -1125,13 +1126,12 @@
         <div class="founder-image">
           <img src="assets/Loonuhh_Real_Life.jpg" alt="Loonuhh, the founder's dog, in real life." />
           <p class="founder-image-caption">Loonuhh</p>
-          <p class="founder-image-sub">(she gets too excited to finish her name)</p>
         </div>
         <div>
           <p class="founder-eyebrow">About the founder</p>
           <h2 class="founder-heading">Why I'm building this.</h2>
           <p class="founder-body">
-            A few years ago, my dog Loonuhh got very sick, very fast. The emergency hospital I drove her to turned us
+            Late last year, my dog Loonuhh got very sick, very fast. The emergency hospital I drove her to turned us
             away because I couldn't pay the deposit up front. A second clinic I found that afternoon didn't. Her surgery
             happened that night. She came home the next morning.
           </p>
