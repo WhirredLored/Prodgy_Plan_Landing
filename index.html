@@ -454,11 +454,11 @@
        and don't flip with her. A radial halo behind the wrapper breaks up
        the cream-on-cream blend. */
     .pounce-row {
-      display: flex;
-      align-items: flex-end; /* align to bottom */
-      flex-wrap: wrap; /* allow wrapping on tiny screens */
-      gap: 1.5rem;
+      position: relative;
+      z-index: 1; /* Stacking context */
       margin: 2.5rem 0 0;
+      display: block;
+      /* removed padding-bottom, dog sits in the right padding instead! */
     }
 
     .pounce-final-line {
@@ -467,9 +467,20 @@
       font-weight: 500;
       line-height: 1.65;
       margin: 0;
-      flex: 1; /* Take up available space */
-      min-width: 250px; /* Force wrap if screen gets too narrow */
+      padding-right: 140px; /* Leave exactly enough room for the dog */
+      text-align-last: right; /* Force the period to sit right next to the empty space */
     }
+
+    .pounce-anchor {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .pounce-target {
+      display: inline-block;
+      font-size: 1.6em;
+      line-height: 0;
       color: var(--accent-warm);
       font-weight: 800;
       transform: translateY(-0.05em);
@@ -495,10 +506,10 @@
     }
 
     .pounce-img-wrap {
-      position: relative;
-      flex: 0 0 140px;
+      position: absolute;
       width: 140px;
-      margin-bottom: -15px; /* Fine-tune snout height relative to text baseline */
+      left: calc(100% + 10px); /* Exactly a couple spaces from the paw */
+      bottom: -25px; /* Aligns eye/snout perfectly with the period */
       filter: var(--loonuhh-shadow);
       animation: pounceIdle 4s ease-in-out infinite;
     }
@@ -626,7 +637,6 @@
       height: auto;
       display: block;
       position: relative;
-      transform: scaleX(-1); /* Face the quote */
     }
 
     /* ---- MEET LOONUHH / FOUNDER ---- */
@@ -1024,12 +1034,14 @@
       -->
       <div class="pounce-row">
         <p class="pounce-final-line">
-          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be un&#8209;made.
+          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be
+          <span class="pounce-anchor">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
+            <span class="pounce-img-wrap">
+              <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
+                alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
+            </span>
+          </span>
         </p>
-        <div class="pounce-img-wrap">
-          <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
-            alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
-        </div>
       </div>
     </div>
   </section>
