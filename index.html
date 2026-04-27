@@ -581,35 +581,24 @@
        The card has its own white background and shadow so it occludes most
        of her body, with her head emerging beyond the card's bottom-right
        corner. Card sits on warm-2 section bg, so the contrast reads. */
-    /* ---- WHERE WE ARE LAYOUT ---- */
-    .where-we-are-layout {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 3.5rem;
-      margin-top: 2rem;
+    /* ---- PEEK LOONUHH IN MARGIN ---- */
+    .peek-img-wrap {
+      position: absolute;
+      left: -260px; /* Sit in the negative margin to the left of the block-narrow */
+      top: 2rem;    /* Align roughly with the top of the text */
+      width: 300px;
+      z-index: 0;
+      pointer-events: none; /* Ensure it doesn't block text selection */
     }
 
-    @media (max-width: 768px) {
-      .where-we-are-layout {
-        flex-direction: column;
-        gap: 2rem;
-      }
-    }
-
-    .where-col-img {
-      flex: 0 0 350px; /* Big dog spanning the column */
-      position: relative;
-    }
-
-    .where-col-img img {
+    .peek-img {
       width: 100%;
       height: auto;
       display: block;
       filter: var(--loonuhh-shadow);
     }
 
-    .where-col-img::before {
+    .peek-img-wrap::before {
       content: '';
       position: absolute;
       inset: -10% -10% -10% -10%;
@@ -618,9 +607,10 @@
       z-index: -1;
     }
 
-    .where-col-text {
-      flex: 1;
-      min-width: 0;
+    @media (max-width: 1100px) {
+      .peek-img-wrap {
+        display: none; /* Hide on smaller screens where there is no left margin */
+      }
     }
 
     .peek-quote {
@@ -1086,36 +1076,32 @@
   </section>
 
   <!-- ================= WHERE WE ARE — with PEEK Loonuhh ================= -->
-  <section class="block warm-2">
-    <div class="block-inner block-narrow">
-      <div class="where-we-are-layout">
-        <!-- Left Column: Big Dog -->
-        <div class="where-col-img">
-          <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh sitting and looking toward the text." />
-        </div>
-
-        <!-- Right Column: Text & Quote -->
-        <div class="where-col-text">
-          <p class="section-eyebrow">Where we are</p>
-          <h2 class="section-title">In development, in Iowa, with practices that have been asking for this for a long time.</h2>
-
-          <p class="section-body">
-            Prodgy Pet Plans is being built now. Our first partners are independent Iowa veterinary practices, and our first
-            participants will be Iowa pet parents. If the idea resonates and you'd like to stay close to the work, the best
-            way to do that is to join the early access list. No commitments, no payment information, no pressure.
-          </p>
-
-          <p class="section-body">
-            When we launch in your part of the state, we'll let you know — and founding members will have access to terms we
-            won't offer again.
-          </p>
-
-          <blockquote class="peek-quote">
-            Iowa first. Independent practices first. Pet parents who deserved a different option a long time ago.
-            <span class="peek-quote-attr">— what we're building, in one breath</span>
-          </blockquote>
-        </div>
+  <section class="block warm-2" style="position: relative; overflow: hidden;">
+    <div class="block-inner block-narrow" style="position: relative;">
+      
+      <!-- Loonuhh placed absolutely beside the text block in the left margin -->
+      <div class="peek-img-wrap">
+        <img class="peek-img" src="assets/Loonuhh-Peek.png" alt="Loonuhh peeking toward the quote block." />
       </div>
+
+      <p class="section-eyebrow">Where we are</p>
+      <h2 class="section-title">In development, in Iowa, with practices that have been asking for this for a long time.</h2>
+
+      <p class="section-body">
+        Prodgy Pet Plans is being built now. Our first partners are independent Iowa veterinary practices, and our first
+        participants will be Iowa pet parents. If the idea resonates and you'd like to stay close to the work, the best
+        way to do that is to join the early access list. No commitments, no payment information, no pressure.
+      </p>
+
+      <p class="section-body">
+        When we launch in your part of the state, we'll let you know — and founding members will have access to terms we
+        won't offer again.
+      </p>
+
+      <blockquote class="peek-quote">
+        Iowa first. Independent practices first. Pet parents who deserved a different option a long time ago.
+        <span class="peek-quote-attr">— what we're building, in one breath</span>
+      </blockquote>
     </div>
   </section>
 
