@@ -456,10 +456,8 @@
     .pounce-row {
       position: relative;
       margin: 2.5rem 0 0;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.5rem;
-      align-items: end;
+      display: block;
+      padding-bottom: 60px; /* Room for absolute image */
     }
 
     .pounce-final-line {
@@ -468,7 +466,17 @@
       font-weight: 500;
       line-height: 1.65;
       margin: 0;
-      align-self: end;
+    }
+
+    .pounce-final-clause {
+      display: block;
+      margin-top: 2.5rem; /* Creates empty space above the dog so it doesn't overlap text */
+    }
+
+    .pounce-anchor {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
     }
 
     .pounce-target {
@@ -500,13 +508,12 @@
     }
 
     .pounce-img-wrap {
-      position: relative;
-      width: 220px;
-      align-self: end;
+      position: absolute;
+      width: 140px;
+      left: calc(100% + 5px); /* Exactly right of the period */
+      bottom: -15px; /* aligns nose/feet with the baseline */
       filter: var(--loonuhh-shadow);
       animation: pounceIdle 4s ease-in-out infinite;
-      margin-bottom: -1.5rem;
-      margin-left: -60px;
     }
 
     .pounce-img {
@@ -872,11 +879,9 @@
         font-size: 2.5rem;
       }
 
-      /* Pounce on mobile: stack image below the line, still flipped */
+      /* Pounce on mobile */
       .pounce-row {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        text-align: left;
+        padding-bottom: 60px;
       }
 
       .pounce-final-line {
@@ -884,8 +889,7 @@
       }
 
       .pounce-img-wrap {
-        width: 180px;
-        margin: 0.5rem auto 0;
+        width: 120px;
       }
 
       /* Peek on mobile: tighten card + shrink image */
@@ -1033,13 +1037,17 @@
       -->
       <div class="pounce-row">
         <p class="pounce-final-line">
-          Which is to say: the status quo is not inevitable. These were decisions someone made — and decisions can be
-          un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
+          Which is to say: the status quo is not inevitable. These were decisions someone made — 
+          <span class="pounce-final-clause">
+            and decisions can be
+            <span class="pounce-anchor">un&#8209;made<span class="pounce-target" aria-hidden="true">.</span>
+              <span class="pounce-img-wrap">
+                <img class="pounce-img" src="assets/Loonuhh-Pounce-Cropped.png"
+                  alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
+              </span>
+            </span>
+          </span>
         </p>
-        <div class="pounce-img-wrap">
-          <img class="pounce-img" src="assets/Loonuhh-Pounce.png"
-            alt="Loonuhh crouched in a play-bow, eyeing the period at the end of the sentence like a ball." />
-        </div>
       </div>
     </div>
   </section>
